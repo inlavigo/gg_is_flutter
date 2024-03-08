@@ -9,7 +9,7 @@
       "name": "gg_is_flutter.dart",
       "type": "dart",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/gg_is_flutter.dart",
+      "program": "${workspaceFolder}/example/gg_is_flutter_example.dart",
       "args": ["--param", "value"],
       "console": "debugConsole"
     },

@@ -6,4 +6,4 @@
 
 library;
 
-export 'src/gg_is_flutter.dart';
+export 'src/is_flutter.dart';
