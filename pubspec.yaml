@@ -1,5 +1,5 @@
 name: gg_is_flutter
-description: Detects if a directory contains a dart or flutter project or something else.
+description: Provides a function that detects if a directory contains a flutter project.
 version: 1.0.0
 repository: https://github.com/inlavigo/gg_is_flutter.git
 
