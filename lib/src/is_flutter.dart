@@ -33,5 +33,5 @@ bool _estimateFlutterOrDart() {
   }
 
   final String content = pubspec.readAsStringSync();
-  return (content.contains('flutter:'));
+  return content.contains('  sdk: flutter') && content.contains('  flutter:');
 }
