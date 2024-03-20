@@ -7,9 +7,17 @@
 // .............................................................................
 import 'dart:io';
 
+import 'package:path/path.dart';
+
 /// Returns true if the current project is a flutter project
 bool get isFlutter =>
-    testIsFlutter ?? (_isFlutter ??= _estimateFlutterOrDart());
+    testIsFlutter ?? (_isFlutter ??= _estimateFlutterOrDart(null));
+
+// .............................................................................
+/// Returns true if the project in dir is a flutter project
+bool isFlutterDir(Directory dir) {
+  return _estimateFlutterOrDart(dir);
+}
 
 // .............................................................................
 bool? _isFlutter;
@@ -26,8 +34,10 @@ void testResetIsFlutter() {
 bool? testIsFlutter;
 
 // .............................................................................
-bool _estimateFlutterOrDart() {
-  final File pubspec = File('pubspec.yaml');
+bool _estimateFlutterOrDart(Directory? dir) {
+  final filePath = dir?.path ?? Directory.current.path;
+
+  final File pubspec = File(join(filePath, 'pubspec.yaml'));
   if (!pubspec.existsSync()) {
     throw Exception('pubspec.yaml not found');
   }
