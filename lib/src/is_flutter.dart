@@ -16,7 +16,7 @@ bool get isFlutter =>
 // .............................................................................
 /// Returns true if the project in dir is a flutter project
 bool isFlutterDir(Directory dir) {
-  return _estimateFlutterOrDart(dir);
+  return testIsFlutter ?? _estimateFlutterOrDart(dir);
 }
 
 // .............................................................................
