@@ -7,6 +7,10 @@
 - Rework changelog
 - Make tests more async
 
+### Fixed
+
+- Pipeline error through changing current directory
+
 ## 1.0.3 - 2024-01-01
 
 - `isFlutterDir(dir)` reads testIsFlutter

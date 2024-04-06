@@ -10,7 +10,7 @@
       "type": "dart",
       "request": "launch",
       "program": "${workspaceFolder}/example/gg_is_flutter_example.dart",
-      "args": ["--param", "value"],
+      "args": ["--help"],
       "console": "debugConsole"
     },
     {

@@ -11,13 +11,9 @@ import 'package:path/path.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final currentDir = Directory.current;
-
   setUp(testResetIsFlutter);
 
-  tearDown(() {
-    Directory.current = currentDir;
-  });
+  tearDown(() {});
 
   group('IsFlutter', () {
     test('should work fine', () {
@@ -27,6 +23,7 @@ void main() {
 
     group('should throw', () {
       test('if pubspec.yaml not found', () {
+        final current = Directory.current;
         final tmp = Directory.systemTemp.createTempSync();
         Directory.current = tmp;
         expect(
@@ -39,6 +36,7 @@ void main() {
             ),
           ),
         );
+        Directory.current = current;
       });
     });
 
@@ -46,6 +44,7 @@ void main() {
       group('should return true', () {
         test('if directory is a flutter project', () {
           final tmp = Directory.systemTemp.createTempSync();
+          final current = Directory.current;
           Directory.current = tmp;
           final pubspec = File(join(tmp.path, 'pubspec.yaml'));
           pubspec.writeAsStringSync('''
@@ -57,12 +56,14 @@ environment:
   sdk: flutter
 ''');
           expect(isFlutterDir(tmp), isTrue);
+          Directory.current = current;
         });
       });
 
       group('should return false', () {
         test('if directory is not a flutter project', () {
           final tmp = Directory.systemTemp.createTempSync();
+          final current = Directory.current;
           Directory.current = tmp;
           final pubspec = File(join(tmp.path, 'pubspec.yaml'));
           pubspec.writeAsStringSync('''
@@ -71,6 +72,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 ''');
           expect(isFlutterDir(tmp), isFalse);
+          Directory.current = current;
         });
       });
     });
