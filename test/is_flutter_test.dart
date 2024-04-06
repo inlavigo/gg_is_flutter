@@ -13,9 +13,7 @@ import 'package:test/test.dart';
 void main() {
   final currentDir = Directory.current;
 
-  setUp(() {
-    testResetIsFlutter();
-  });
+  setUp(testResetIsFlutter);
 
   tearDown(() {
     Directory.current = currentDir;
