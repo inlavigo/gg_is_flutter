@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## \[Unreleased\]
 
 ### Changed
 
@@ -11,16 +11,15 @@
 
 - Pipeline error through changing current directory
 
-## 1.0.3 - 2024-01-01
+### Added
 
 - `isFlutterDir(dir)` reads testIsFlutter
-
-## 1.0.2 - 2024-01-01
-
 - Add `isFlutterDir(dir)`
 
-## 1.0.1 - 2024-01-01
+## [1.0.4] - 2024-04-09
 
-- Initial version.
+### Changed
 
-[Unreleased]: https://github.com/inlavigo/gg_is_flutter/compare/1.0.3...HEAD
+- Prepare publish
+
+[1.0.4]: https://github.com/inlavigo/gg_is_flutter/tag/%tag
