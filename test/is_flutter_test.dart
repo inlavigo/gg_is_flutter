@@ -13,7 +13,11 @@ import 'package:test/test.dart';
 void main() {
   setUp(testResetIsFlutter);
 
-  tearDown(() {});
+  final currentBefore = Directory.current;
+
+  tearDown(() {
+    Directory.current = currentBefore;
+  });
 
   group('IsFlutter', () {
     test('should work fine', () {
