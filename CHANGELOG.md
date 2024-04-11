@@ -1,21 +1,5 @@
 # Changelog
 
-## \[Unreleased\]
-
-### Changed
-
-- Rework changelog
-- Make tests more async
-
-### Fixed
-
-- Pipeline error through changing current directory
-
-### Added
-
-- `isFlutterDir(dir)` reads testIsFlutter
-- Add `isFlutterDir(dir)`
-
 ## [1.0.6] - 2024-04-11
 
 ### Added
